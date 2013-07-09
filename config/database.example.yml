@@ -19,8 +19,10 @@ development:
   encoding: unicode
   database: StudentBin_development
   pool: 5
-  username: StudentBin
+  username: dtt22
   password:
+  host: localhost
+  port: 5432
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,7 +50,7 @@ test:
   encoding: unicode
   database: StudentBin_test
   pool: 5
-  username: StudentBin
+  username: dtt22
   password:
 
 production:
@@ -56,5 +58,5 @@ production:
   encoding: unicode
   database: StudentBin_production
   pool: 5
-  username: StudentBin
+  username: dtt22
   password:
