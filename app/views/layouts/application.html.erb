@@ -43,17 +43,10 @@
             </form>
           </div>
         </div>
-        <div class="pull-right sign-in-nav">
-        <% if user_signed_in? %>
-          <%= current_user.eamil %>. Not you? <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-        <% end %>
-        </div>
         <div id="flash-container">
           <% if flash.present? %>
             <%- flash.each do |name, msg| -%>
-              <%= content_tag :div, class: "flash-message alert #{v2_bootstrapified_type name} fade in" do %>
+              <%= content_tag :div, class: "flash-message alert #{name} fade in" do %>
                 <%= link_to "&times;".html_safe, "#", class: 'close', data: {dismiss: 'alert'} %>
                 <%= raw msg %>
               <% end %>
@@ -69,6 +62,14 @@
           <% end %>
         </div>
       </div>
+      <div class="sign-in-nav" style="text-align:right">
+      <% if user_signed_in? %>
+        <%= current_user.email %>. Not you? <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+      <% end %>
+      </div>
+
       <%= yield %>
       <%= yield :before_javascripts -%>
       <% if Rails.env.production?  %>
