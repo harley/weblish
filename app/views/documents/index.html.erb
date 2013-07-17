@@ -6,6 +6,7 @@
       <th>Name</th>
       <th></th>
       <th>Uploaded by</th>
+      <th>Comments</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,9 @@
       <td><%= link_to document, document %></td>
       <td><%= render_document document, preview: true %></td>
       <td><%= document.user %></td>
+      <td>
+        <%= render 'comments/comments', comments: document.comments %>
+      </td>
     </tr>
     <% end %>
   </tbody>
