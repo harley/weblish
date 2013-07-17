@@ -1,0 +1,7 @@
+<h1>Upload a document</h1>
+
+<%= simple_form_for @document, html: {multipart: true} do |f| %>
+  <%= f.input :name %>
+  <%= f.input :file, label: "Select a file to upload" %>
+  <%= f.button :submit %>
+<% end %>
