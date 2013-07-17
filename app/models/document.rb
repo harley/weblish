@@ -8,6 +8,8 @@ class Document < ActiveRecord::Base
 
   default_scope -> { order('created_at DESC') }
 
+  acts_as_commentable
+
   def to_s
     name || file
   end

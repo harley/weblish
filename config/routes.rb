@@ -8,7 +8,9 @@ Weblish::Application.routes.draw do
   root 'home#index'
   get 'home/pin' => 'home#pin'
 
-  resources :documents
+  resources :documents do
+    resources :comments
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
