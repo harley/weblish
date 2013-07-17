@@ -1,6 +1,10 @@
 class DocumentsController < ApplicationController
   respond_to :html
 
+  def index
+    @documents = Document.all
+  end
+
   def new
     @document = Document.new
   end
@@ -12,9 +16,6 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find params[:id]
-  end
-
-  def edit
   end
 
   def destroy
