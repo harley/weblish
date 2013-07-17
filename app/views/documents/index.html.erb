@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th></th>
+      <th>Uploaded by</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,7 @@
     <tr>
       <td><%= document %></td>
       <td><%= render_document document, preview: true %></td>
+      <td><%= document.user %></td>
     </tr>
     <% end %>
   </tbody>

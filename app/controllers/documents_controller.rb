@@ -1,17 +1,19 @@
 class DocumentsController < ApplicationController
+  before_filter :authenticate_user!, except: :show
+
   respond_to :html
   responders :flash
 
   def index
-    @documents = Document.all
+    @documents = current_user.documents
   end
 
   def new
-    @document = Document.new
+    @document = current_user.documents.build
   end
 
   def create
-    @document = Document.create document_params
+    @document = current_user.documents.create document_params
     respond_with @document
   end
 
