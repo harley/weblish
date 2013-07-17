@@ -1,5 +1,11 @@
 <%= link_to "Back to listing", documents_path %>
-<h1>Document: <%= @document %></h1>
+<h1>
+  Document<br>
+  <small><%= @document %></small>
+</h1>
+
 
 <%= render_document @document %>
 
+
+<h1>Comments</h1>
