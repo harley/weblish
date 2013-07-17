@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
   respond_to :html
+  responders :flash
 
   def index
     @documents = Document.all
@@ -25,5 +26,9 @@ class DocumentsController < ApplicationController
 
   def document_params
     params.require(:document).permit(:name, :file)
+  end
+
+  def interpolation_options
+    { resource_name: @document.name }
   end
 end

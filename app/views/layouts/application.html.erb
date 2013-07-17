@@ -26,11 +26,13 @@
             <a class="brand" href="#"><b>webl</b><span style="font-weight: normal;">ish</span></a>
             <div class="nav-collapse collapse">
               <ul class="nav">
+                <% unless user_signed_in? %>
                 <li>
-                  <a href="#">Log-in</a>
+                  <%= link_to "Log in", new_user_session_path %>
                 </li>
+                <% end %>
                 <li>
-                  <a href="#">Upload</a>
+                  <%= link_to "Upload", new_document_path %>
                 </li>
                 <li>
                   <a href="#">About</a>
