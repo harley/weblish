@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-StudentBin::Application.load_tasks
+Weblish::Application.load_tasks
