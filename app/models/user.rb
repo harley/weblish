@@ -10,4 +10,12 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
+
+  def documents_read_count
+    'XXX'
+  end
+
+  def display_name
+    email
+  end
 end
