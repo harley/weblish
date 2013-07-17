@@ -1,9 +1,18 @@
 <h1>Documents</h1>
 
-<ul>
-  <% @documents.each do |document| %>
-    <li>
-    <%= document %>, created at <%= document.created_at.to_s(:am_pm_long) %><br>
-    <%= link_to 'view', document %></li>
-  <% end %>
-</ul>
+<table border="0" class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @documents.each do |document| %>
+    <tr>
+      <td><%= document %></td>
+      <td><%= render_document document, preview: true %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
