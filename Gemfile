@@ -49,3 +49,4 @@ end
 gem 'rails_12factor', group: :production
 gem 'unicorn'
 gem 'foreman'
+gem 'devise', '~> 3.0.0.rc'
