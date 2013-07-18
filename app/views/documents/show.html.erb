@@ -1,12 +1,17 @@
 <%= link_to "Back to listing", documents_path %>
+<%= link_to "Edit", [:edit, @document] %>
 <h1>
   Document<br>
   <small><%= @document %></small>
 </h1>
 
+<div>
+  <% @document.topics.each do |topic| %>
+    <span class="label label-info"><%= topic %></span>
+  <% end %>
+</div>
 
 <%= render_document @document %>
-
 
 <h1>Comments</h1>
 <%= render 'comments/comments' %>

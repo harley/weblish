@@ -1,6 +1,7 @@
 class Document < ActiveRecord::Base
   belongs_to :user
-  has_many :topics
+  has_many :categorizations
+  has_many :topics, through: :categorizations
 
   mount_uploader :file, DocumentUploader
 

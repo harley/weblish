@@ -1,0 +1,19 @@
+<%= simple_form_for @document, html: {multipart: true} do |f| %>
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="well">
+        <%= f.input :name, label: "Document title", hint: "Leave blank to use the uploaded file's name", input_html: {class: 'full-width'} %>
+        <% if f.object.file? %>
+          <%= render_document f.object, preview: true %>
+        <% end %>
+        <%= f.input :file, hint: "Select a file to upload", label: 'File' %>
+        <%= f.button :submit, nil, class: 'btn-info' %>
+      </div>
+    </div>
+    <div class="span6">
+      <div class="well">
+        <%= f.association :topics, as: :select, input_html: {multiple: true, class: 'xx-large'} %>
+      </div>
+    </div>
+  </div>
+<% end %>

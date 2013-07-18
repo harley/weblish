@@ -12,6 +12,16 @@ class DocumentsController < ApplicationController
     @document = current_user.documents.build
   end
 
+  def edit
+    @document = current_user.documents.find params[:id]
+  end
+
+  def update
+    @document = current_user.documents.find params[:id]
+    @document.update_attributes document_params
+    respond_with @document
+  end
+
   def create
     @document = current_user.documents.create document_params
     respond_with @document
@@ -30,7 +40,7 @@ class DocumentsController < ApplicationController
   private
 
   def document_params
-    params.require(:document).permit(:name, :file)
+    params.require(:document).permit(:name, :file, topic_ids: [])
   end
 
   def interpolation_options

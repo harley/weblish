@@ -28,4 +28,5 @@ Weblish::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = {host: 'http://weblish.dev'}
+  config.action_controller.action_on_unpermitted_parameters = :raise
 end
