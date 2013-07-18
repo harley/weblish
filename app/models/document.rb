@@ -20,7 +20,7 @@ class Document < ActiveRecord::Base
 
   def set_name_if_not_presence
     if self.name.blank? && file?
-      self.name = file.file.filename
+      self.update_column :name, file.file.filename
     end
   end
 end
