@@ -1,6 +1,6 @@
 require 'rollbar/rails'
 Rollbar.configure do |config|
-  config.access_token = '0d5d05b5a18d47fcaa728b316c14b7f6'
+  config.access_token = '36998cdad31a4da39aa0ca40330f11b0'
 
   # Without configuration, Rollbar is enabled by in all environments. 
   # To disable in specific environments, set config.enabled=false.
