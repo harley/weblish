@@ -17,4 +17,10 @@ module DocumentsHelper
       "Preview Not Available"
     end
   end
+
+  def render_document_topics(document)
+    content_tag_for(:span, document.topics, class: 'label label-info') do |topic|
+      topic.name
+    end
+  end
 end

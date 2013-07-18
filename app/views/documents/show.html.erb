@@ -6,9 +6,7 @@
 </h1>
 
 <div>
-  <% @document.topics.each do |topic| %>
-    <span class="label label-info"><%= topic %></span>
-  <% end %>
+  <%= render_document_topics @document %>
 </div>
 
 <%= render_document @document %>

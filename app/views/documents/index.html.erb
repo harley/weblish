@@ -12,7 +12,10 @@
   <tbody>
     <% @documents.each do |document| %>
     <tr>
-      <td><%= link_to document, document %></td>
+      <td>
+        <%= link_to document, document %><br>
+        <%= render_document_topics document %>
+      </td>
       <td><%= render_document document, preview: true %></td>
       <td><%= document.user %></td>
       <td>
