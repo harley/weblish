@@ -1,8 +1,21 @@
 <h1>Upload a document</h1>
 
 <p>Topic: Coming soon</p>
+
 <%= simple_form_for @document, html: {multipart: true} do |f| %>
-  <%= f.input :name %>
-  <%= f.input :file, label: "Select a file to upload" %>
-  <%= f.button :submit %>
+  <div class="row-fluid">
+    <div class="row">
+      <div class="span6">
+        <div class="well">
+          <%= f.input :name, label: "Document title", hint: "Leave blank to use the uploaded file's name" %>
+          <%= f.input :file, label: "Select a file to upload" %>
+          <%= f.button :submit, nil, class: 'btn-info' %>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="well">
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
