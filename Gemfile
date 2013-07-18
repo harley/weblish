@@ -58,3 +58,4 @@ gem 'rails_admin'
 gem 'seed-fu', github: 'mbleigh/seed-fu'
 gem 'acts_as_commentable'
 gem 'chosen-rails'
+gem "rollbar", "~> 0.10.4"
