@@ -48,7 +48,7 @@
 
         <div class="sign-in-nav">
           <% if user_signed_in? %>
-            <%= image_tag(gravatar_url(current_user), class: 'pull-right gravatar') %>
+            <%= image_tag(gravatar_url(current_user, s: 32), class: 'pull-right gravatar') %>
           <% end %>
           <div style="float:right;text-align:right">
             <% if user_signed_in? %>

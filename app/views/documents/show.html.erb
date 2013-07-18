@@ -1,20 +1,21 @@
-<%= link_to "Back to listing", documents_path %>
-<%= link_to "Edit", [:edit, @document] %>
-
 <% title "Document" %>
 
 <div class="row">
   <div class="span8 well">
+    <div class="pull-right">
+      <%= link_to "Back to listing", documents_path %> |
+      <%= link_to "Edit", [:edit, @document] %>
+  </div>
     <h3><%= @document %></h3>
     <div> <%= render_document_topics @document %> </div>
     <%= render_document @document %>
   </div>
-  <div class="span4 well">
-    <h3>Comments</h3>
-    <%= render 'comments/comments' %>
-
+  <div class="span4">
     <h3>New Comment</h3>
     <%= render 'comments/form' %>
+
+    <h3>Comments</h3>
+    <%= render 'comments/comments', comments: @document.comments.order("created_at DESC") %>
   </div>
 </div>
 

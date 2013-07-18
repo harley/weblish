@@ -4,12 +4,21 @@
     <div id="no-comments">There are no comments yet.</div>
   <% else %>
     <% @comments.each do |comment| %>
-      <div class="comment">
-        <%= simple_format comment.comment %>
-      </div>
-      <div class="by">
-        by <%= comment.user %>
-      </div>
+      <%= div_for comment do %>
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="by">
+            <%= render 'users/commenter', user: comment.user %>
+          </div>
+        </div>
+        <div class="span9">
+          <div class="comment-body">
+            <%= simple_format comment.comment %>
+          </div>
+          <span class="timestamp pull-right"><%= comment.created_at.to_s(:am_pm_long) %></span>
+        </div>
+        </div>
+        <% end %>
     <% end %>
   <% end %>
 </div>

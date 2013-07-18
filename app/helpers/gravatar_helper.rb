@@ -1,6 +1,6 @@
 # gravatar_helper.rb
 module GravatarHelper
-  def gravatar_url(user)
+  def gravatar_url(user, options = {})
     # if user.user_image_url.present?
     #  user.user_image_url
     # else
@@ -8,8 +8,9 @@ module GravatarHelper
 
     # pass in the user's email through Digest::MD5.hexdigest downcase
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
+    options[:s] ||= 48
 
     #returns the url for the gravatar image or our custom image if no gravatar
-    "http://gravatar.com/avatar/#{gravatar_id}.png?s=32&d=identicon"
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{options[:s]}&d=identicon"
   end
 end

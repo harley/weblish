@@ -1,6 +1,6 @@
 class CreateCategorizations < ActiveRecord::Migration
   def change
-    create_table :categorizations, id: false, force: true do |t|
+    create_table :categorizations, force: true do |t|
       t.integer :document_id
       t.integer :topic_id
     end
