@@ -47,13 +47,12 @@
           <% if user_signed_in? %>
             <%= image_tag(gravatar_url(current_user), class: 'pull-right gravatar') %>
           <% end %>
-          <div style="float:right">
+          <div style="float:right;text-align:right">
             <% if user_signed_in? %>
               <span>
                 <%= link_to current_user.email, edit_user_registration_path %><br>
-                <em>
-                  Not you? <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-                </em>
+                <em>Not you? </em>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
               </span>
             <% else %>
               <div style="line-height:35px;padding-right:10px">
