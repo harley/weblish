@@ -2,7 +2,11 @@
 <html>
 
   <head>
-    <title>Weblish</title>
+    <% if content_for?(:title) %>
+      <title>Weblish | <%= yield(:title) %></title>
+    <% else %>
+      <title>Weblish</title>
+    <% end %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <!--[if lt IE 8]>
@@ -90,17 +94,21 @@
             <% end %>
           <% end %>
       </div>
-
-      <%= yield %>
-      <%= yield :before_javascripts -%>
-      <% if Rails.env.production?  %>
-        <%#= render file: "/layouts/google_analytics" %>
-      <% end -%>
-      <%= yield :javascripts -%>
-    <hr>
-    <div class="container"></div>
-    <div></div>
-    <div></div>
+      <div class="container-fluid">
+        <% if content_for?(:title) %>
+          <h1><%= yield(:title) %></h1>
+        <% end %>
+        <%= yield %>
+        <%= yield :before_javascripts -%>
+        <% if Rails.env.production?  %>
+          <%#= render file: "/layouts/google_analytics" %>
+        <% end -%>
+        <%= yield :javascripts -%>
+      </div>
+      <hr>
+      <div class="container"></div>
+      <div></div>
+      <div></div>
     </div>
   </body>
 </html>
