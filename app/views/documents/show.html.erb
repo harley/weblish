@@ -1,18 +1,23 @@
 <%= link_to "Back to listing", documents_path %>
 <%= link_to "Edit", [:edit, @document] %>
-<h1>
-  Document<br>
-  <small><%= @document %></small>
-</h1>
 
-<div>
-  <%= render_document_topics @document %>
+<% title "Document" %>
+
+<div class="row">
+  <div class="span8 well">
+    <h3><%= @document %></h3>
+    <div> <%= render_document_topics @document %> </div>
+    <%= render_document @document %>
+  </div>
+  <div class="span4 well">
+    <h3>Comments</h3>
+    <%= render 'comments/comments' %>
+
+    <h3>New Comment</h3>
+    <%= render 'comments/form' %>
+  </div>
 </div>
 
-<%= render_document @document %>
 
-<h1>Comments</h1>
-<%= render 'comments/comments' %>
 
-<h1>New Comment</h1>
-<%= render 'comments/form' %>
+

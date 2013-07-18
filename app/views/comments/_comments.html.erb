@@ -1,11 +1,15 @@
 <% @comments ||= comments %>
 <div id="comments">
-  <% @comments.each do |comment| %>
-    <div class="comment">
-      <%= simple_format comment.comment %>
-    </div>
-    <div class="by">
-      by <%= comment.user %>
-    </div>
+  <% if @comments.empty? %>
+    <div id="no-comments">There are no comments yet.</div>
+  <% else %>
+    <% @comments.each do |comment| %>
+      <div class="comment">
+        <%= simple_format comment.comment %>
+      </div>
+      <div class="by">
+        by <%= comment.user %>
+      </div>
+    <% end %>
   <% end %>
 </div>
