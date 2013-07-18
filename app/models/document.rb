@@ -1,5 +1,7 @@
 class Document < ActiveRecord::Base
   belongs_to :user
+  has_many :topics
+
   mount_uploader :file, DocumentUploader
 
   validates :file, presence: true

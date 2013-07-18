@@ -13,7 +13,6 @@
     <%= stylesheet_link_tag "font-awesome-ie7.min", media: "all" %>
     <![endif]-->
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -94,7 +93,6 @@
             <% end %>
           <% end %>
       </div>
-      <div class="container-fluid">
         <% if content_for?(:title) %>
           <h1><%= yield(:title) %></h1>
         <% end %>
@@ -104,11 +102,11 @@
           <%#= render file: "/layouts/google_analytics" %>
         <% end -%>
         <%= yield :javascripts -%>
-      </div>
       <hr>
       <div class="container"></div>
       <div></div>
       <div></div>
     </div>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
 </html>
