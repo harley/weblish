@@ -14,3 +14,10 @@ body {
   padding-top: 10px;
   float: right;
 }
+
+a {
+  text-decoration: underline;
+}
+a.noline, a.brand, a.btn {
+  text-decoration: none;
+}

@@ -56,7 +56,11 @@
                 </em>
               </span>
             <% else %>
-              <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+              <div style="line-height:35px;padding-right:10px">
+                <%= link_to "Sign up", new_user_registration_path %>
+                or
+                <%= link_to "sign in", new_user_session_path %>
+            </div>
             <% end %>
           </div>
         </div>
