@@ -7,7 +7,11 @@ module GravatarHelper
     # sets our custom image path
 
     # pass in the user's email through Digest::MD5.hexdigest downcase
-    gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
+    if user
+      gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
+    else
+      gravatar_id = Digest::MD5.hexdigest('guest')
+    end
     options[:s] ||= options[:size] || 48
 
     #returns the url for the gravatar image or our custom image if no gravatar
