@@ -23,4 +23,13 @@ class Document < ActiveRecord::Base
       self.update_column :name, file.file.filename
     end
   end
+
+  def description
+    "TO BE ADDED"
+  end
+
+  def self.popular
+    # TODO: implement this after having likes
+    order("created_at DESC")
+  end
 end

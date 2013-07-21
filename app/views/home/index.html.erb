@@ -69,56 +69,7 @@
   </div>
   <div class="span4">
     <h3>Popular Papers</h3>
-    <div class="media">
-      <a class="pull-left" href="#">
-        <img class="media-object" src="//app.divshot.com/img/placeholder-64x64.gif" width="80" height="80">
-      </a>
-      <div class="media-body">
-        <h4 class="media-heading">Paper Name 1</h4>
-        <p>
-        <small>Author Name</small>
-        </p>
-        <p class="text-right">This paper is about papers. Meta!
-        <br>
-        </p>
-      </div>
-    </div>
-    <div class="media">
-      <a class="pull-left" href="#">
-        <img class="media-object" src="//app.divshot.com/img/placeholder-64x64.gif" width="80" height="80">
-      </a>
-      <div class="media-body">
-        <h4 class="media-heading">Paper Name 2</h4>
-        <p>
-        <small>Author Name</small>
-        </p>
-        <p class="text-right">This paper is about primates. Monkey!
-        <br>
-        </p>
-      </div>
-    </div>
-    <div class="media">
-      <a class="pull-left" href="#">
-        <img class="media-object" src="//app.divshot.com/img/placeholder-64x64.gif" width="80" height="80">
-      </a>
-      <div class="media-body">
-        <h4 class="media-heading">Paper Name 3</h4>
-        <p>
-        <small>Author Name</small>
-        </p>
-        <p class="text-right">This paper is about nothing. Nietzsche!
-        <br>
-        </p>
-      </div>
-    </div>
-    <div class="media">
-      <a class="pull-left" href="#"></a>
-      <div class="media-body"></div>
-    </div>
-    <div class="media">
-      <a class="pull-left" href="#"></a>
-      <div class="media-body"></div>
-    </div>
+    <%= render partial: 'documents/teaser', collection: Document.popular.last(3) %>
   </div>
   <div class="span4">
     <h3>Popular Discussions</h3>

@@ -1,4 +1,20 @@
 module DocumentsHelper
+  def render_document_preview(document, options = {})
+    options[:w] ||= 48
+    options[:h] ||= 48
+
+    case document.file.file.extension
+    when "png", "jpg", "gif"
+      image_tag(document.file, width: options[:w], height: options[:h])
+    when "pdf"
+      content_tag(:object, data: document.file.url, type: 'application/pdf', width: options[:w], height: options[:h]) do
+        "This browser doesn't support displaying PDF"
+      end
+    else
+      image_tag("//app.divshot.com/img/placeholder-64x64.gif", class: 'media-object', width: options[:w], height: options[:h])
+    end
+  end
+
   def render_document(document, options = {})
     case document.file.file.extension
     when "png", "jpg", "gif"

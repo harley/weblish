@@ -1,0 +1,14 @@
+<div class="media">
+  <a class="pull-left media-object" href="#">
+    <%= render_document_preview(teaser) %>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><%= teaser.name %></h4>
+    <p>
+    <small><%= link_to teaser.user, teaser.user %></small>
+    </p>
+    <p class="text-right"><%= teaser.description %>
+    <br>
+    </p>
+  </div>
+</div>
