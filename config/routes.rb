@@ -18,6 +18,8 @@ Weblish::Application.routes.draw do
     end
   end
 
+  resources :relationships, only: [:create, :destroy]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

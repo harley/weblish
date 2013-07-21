@@ -13,4 +13,8 @@ module GravatarHelper
     #returns the url for the gravatar image or our custom image if no gravatar
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{options[:s]}&d=identicon"
   end
+
+  def gravatar_for(user)
+    image_tag gravatar_url(current_user), class: 'gravatar'
+  end
 end

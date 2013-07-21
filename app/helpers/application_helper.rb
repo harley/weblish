@@ -15,4 +15,8 @@ module ApplicationHelper
   def show_title?
     @show_title
   end
+
+  def current_user?(user)
+    current_user == user
+  end
 end
