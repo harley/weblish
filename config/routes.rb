@@ -12,6 +12,12 @@ Weblish::Application.routes.draw do
     resources :comments
   end
 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

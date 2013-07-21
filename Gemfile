@@ -61,8 +61,8 @@ gem 'chosen-rails'
 gem "rollbar", "~> 0.10.4"
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
-end
-group :test do
+  gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
-
