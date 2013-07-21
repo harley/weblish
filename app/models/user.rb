@@ -34,4 +34,8 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
     relationships.find_by(followed_id: other_user.id).destroy
   end
+
+  def popular_documents_from_followed
+    Document.where(user_id: followed_user_ids)
+  end
 end
