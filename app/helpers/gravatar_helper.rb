@@ -8,13 +8,13 @@ module GravatarHelper
 
     # pass in the user's email through Digest::MD5.hexdigest downcase
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
-    options[:s] ||= 48
+    options[:s] ||= options[:size] || 48
 
     #returns the url for the gravatar image or our custom image if no gravatar
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{options[:s]}&d=identicon"
   end
 
-  def gravatar_for(user)
-    image_tag gravatar_url(current_user), class: 'gravatar'
+  def gravatar_for(user, options = {})
+    image_tag gravatar_url(user, options), class: 'gravatar'
   end
 end

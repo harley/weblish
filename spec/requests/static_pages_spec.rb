@@ -14,8 +14,7 @@ describe "Static pages" do
         before do
           other_user.follow!(user)
           login_as(user, scope: :user)
-          visit root_path
-          save_and_open_page
+          visit user_path(user)
         end
         let(:subject) { page }
 
