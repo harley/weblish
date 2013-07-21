@@ -15,7 +15,7 @@ class Document < ActiveRecord::Base
   after_save :set_name_if_not_presence
 
   def to_s
-    name || file
+    (name || file).presence || 'Untitled'
   end
 
   def set_name_if_not_presence
