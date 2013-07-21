@@ -1,14 +1,14 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <%= gravatar_for @user %>
-      <%= @user.display_name %>
+      <%= gravatar_for user %>
+      <%= user.display_name %>
     </section>
     <section>
       <%= render 'shared/stats' %>
     </section>
   </aside>
   <div class="span8">
-    <%= render 'follow_form' if user_signed_in? %>
+    <%= render 'follow_form', user: user if user_signed_in? %>
   </div>
 </div>
