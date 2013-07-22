@@ -22,7 +22,7 @@
         <div class='chat'>
           <div class='chatbox'>
             <%= image_tag gravatar_url(document.user, s: 24) %>
-            <span><%= document.user.display_name %></span>
+            <span><%= link_to document.user.display_name, document.user %></span>
             <%= render_document_topics document %>
           </div>
         </div>
