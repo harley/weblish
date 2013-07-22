@@ -1,7 +1,23 @@
-<ul>
-  <% @documents.each do |document| %>
-  <li><%= document %></li>
-  <% end %>
-</ul>
+<div class="pinning-wrapper">
+  <div id='masonry'>
+    <% @documents.each do |document| %>
+      <div class='item'>
+        <caption><%= document %></caption>
+        <%= render_document_preview document %>
+        <h2 class='lipsum'></h2>
+        <div class='comments'>
+          <%= document.comments.size %> comments
+        </div>
+        <div class='chat'>
+          <div class='chatbox'>
+            <%= image_tag gravatar_url(document.user, s: 24) %>
+            <span><%= document.user.display_name %></span>
+            <%= render_document_topics document %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <%= paginate @documents %>

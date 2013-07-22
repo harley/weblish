@@ -7,9 +7,10 @@ module DocumentsHelper
     when "png", "jpg", "gif"
       image_tag(document.file, width: options[:w], height: options[:h])
     when "pdf"
-      content_tag(:object, data: document.file.url, type: 'application/pdf', width: options[:w], height: options[:h]) do
-        "This browser doesn't support displaying PDF"
-      end
+      image_tag("http://placehold.it/190x300px/b981a5/305eb8&text=PDF")
+      # content_tag(:object, data: document.file.url, type: 'application/pdf', width: options[:w], height: options[:h]) do
+      #   "This browser doesn't support displaying PDF"
+      # end
     else
       image_tag("//app.divshot.com/img/placeholder-64x64.gif", class: 'media-object', width: options[:w], height: options[:h])
     end

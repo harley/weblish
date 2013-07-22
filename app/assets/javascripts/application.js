@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require chosen-jquery
+//= require jquery.masonry.min
 //= require base
+//= require pinning

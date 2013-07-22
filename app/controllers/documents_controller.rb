@@ -55,7 +55,7 @@ class DocumentsController < ApplicationController
   end
 
   def explore
-    @documents = Document.page(params[:page]).per(2)
+    @documents = Document.order("created_at DESC").page(params[:page]).per(20)
   end
 
   private
