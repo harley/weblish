@@ -40,9 +40,7 @@
                 <% if user_signed_in? %>
                   <li><%= link_to "My documents", documents_path %></li>
                 <% end %>
-                <li>
-                <a href="#">About</a>
-                </li>
+                <li><%= link_to "Explore", explore_documents_path %></li>
               </ul>
             </div>
 

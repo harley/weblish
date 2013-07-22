@@ -67,3 +67,5 @@ group :development, :test do
   gem 'database_cleaner'
 end
 gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
+gem 'kaminari', github: 'amatsuda/kaminari'
+gem 'kaminari-bootstrap'

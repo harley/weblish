@@ -13,6 +13,9 @@ Weblish::Application.routes.draw do
     member do
       patch :like
     end
+    collection do
+      get :explore
+    end
   end
 
   resources :users do

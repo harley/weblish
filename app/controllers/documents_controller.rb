@@ -54,6 +54,9 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def explore
+    @documents = Document.page(params[:page]).per(2)
+  end
 
   private
 

@@ -1,0 +1,7 @@
+<ul>
+  <% @documents.each do |document| %>
+  <li><%= document %></li>
+  <% end %>
+</ul>
+
+<%= paginate @documents %>
