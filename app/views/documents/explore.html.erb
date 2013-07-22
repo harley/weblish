@@ -2,11 +2,22 @@
   <div id='masonry'>
     <% @documents.each do |document| %>
       <div class='item'>
-        <caption><%= document %></caption>
-        <%= render_document_preview document %>
+        <caption><%= link_to document, document, class: 'noline' %></caption>
+        <%= link_to document do %>
+          <%= render_document_preview document %>
+        <% end %>
         <h2 class='lipsum'></h2>
-        <div class='comments'>
-          <%= document.comments.size %> comments
+        <div class="row-fluid">
+          <div class="span6">
+            <div class='comments'>
+              <%= document.comments.size %> comments
+            </div>
+          </div>
+          <div class="span6">
+            <div class='likes'>
+              <%= document.likes.size %> likes
+            </div>
+          </div>
         </div>
         <div class='chat'>
           <div class='chatbox'>
