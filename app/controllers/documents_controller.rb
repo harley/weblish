@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  before_filter :authenticate_user!, except: :show
+  before_filter :authenticate_user!, except: [:show, :like]
 
   respond_to :html
   responders :flash
@@ -35,6 +35,25 @@ class DocumentsController < ApplicationController
 
   def destroy
   end
+
+  def like
+    if current_user
+      @document = Document.find params[:id]
+      if params[:vote] == 'like'
+        @document.liked_by current_user
+      elsif params[:vote] == 'unlike'
+        # somehow unliked_by doesn't work
+        @document.disliked_by current_user
+      end
+    else
+      flash[:error] = "Sorry. You need to be signed in to like a document"
+    end
+
+    respond_to do |fmt|
+      fmt.js
+    end
+  end
+
 
   private
 

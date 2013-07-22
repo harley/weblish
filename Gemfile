@@ -66,3 +66,4 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
 end
+gem 'acts_as_votable', github: 'ryanto/acts_as_votable'

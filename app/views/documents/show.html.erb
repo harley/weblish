@@ -11,6 +11,7 @@
     <%= render_document @document %>
   </div>
   <div class="span4">
+    <%= render 'likes', document: @document %>
     <h3>New Comment</h3>
     <%= render 'comments/form' %>
 

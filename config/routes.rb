@@ -10,6 +10,9 @@ Weblish::Application.routes.draw do
 
   resources :documents do
     resources :comments
+    member do
+      patch :like
+    end
   end
 
   resources :users do

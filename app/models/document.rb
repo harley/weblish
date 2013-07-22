@@ -11,6 +11,7 @@ class Document < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
 
   acts_as_commentable
+  acts_as_votable
 
   after_save :set_name_if_not_presence
 
@@ -31,5 +32,11 @@ class Document < ActiveRecord::Base
   def self.popular
     # TODO: implement this after having likes
     order("created_at DESC")
+  end
+
+  def liked_by?(user)
+    if user
+      likes.exists?(voter_id: user.id, voter_type: user.class.name)
+    end
   end
 end

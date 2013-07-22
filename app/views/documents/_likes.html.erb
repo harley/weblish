@@ -1,0 +1,10 @@
+<div id="like_document_<%= document.id %>">
+  <%= render 'likes_link', document: document %>
+  <span class="likes_count">
+    <% if likes_count = document.likes.size > 0 %>
+      <%= document.likes.size %> liked this.
+    <% else %>
+      Be the first to like this.
+    <% end %>
+  </span>
+</div>

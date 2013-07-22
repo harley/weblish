@@ -1,0 +1,5 @@
+<% if flash[:error] %>
+  alert("<%=j flash.discard(:error) %>");
+<% else %>
+  $("#like_document_" + <%= @document.id %>).replaceWith("<%=j render 'likes', document: @document %>");
+<% end %>
