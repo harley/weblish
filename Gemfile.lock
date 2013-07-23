@@ -118,6 +118,8 @@ GEM
     kgio (2.8.0)
     launchy (2.3.0)
       addressable (~> 2.3)
+    letter_opener (1.1.2)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -253,6 +255,7 @@ DEPENDENCIES
   kaminari!
   kaminari-bootstrap
   launchy
+  letter_opener
   pg
   rails (= 4.0.0)
   rails_12factor

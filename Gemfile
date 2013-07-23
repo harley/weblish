@@ -69,3 +69,6 @@ end
 gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
 gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'kaminari-bootstrap'
+group :development do
+  gem 'letter_opener'
+end
