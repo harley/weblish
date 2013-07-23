@@ -13,8 +13,6 @@
     }
     config.fog_directory = ENV['AWS_BUCKET']
     # config.fog_public = false
-    p config.fog_directory
-    p config.fog_credentials
     config.cache_dir = "#{Rails.root}/tmp/uploads"
   end
 end
