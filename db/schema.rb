@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20130723171612) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
-    t.string   "tagline"
+    t.text     "tagline"
     t.string   "author"
     t.string   "university"
     t.string   "class_code"

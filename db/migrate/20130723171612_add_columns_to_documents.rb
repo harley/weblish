@@ -1,7 +1,7 @@
 class AddColumnsToDocuments < ActiveRecord::Migration
   def change
     add_column :documents, :title, :string
-    add_column :documents, :tagline, :string
+    add_column :documents, :tagline, :text
     add_column :documents, :author, :string
     add_column :documents, :university, :string
     add_column :documents, :class_code, :string

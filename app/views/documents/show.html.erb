@@ -1,7 +1,7 @@
 <% title "Document" %>
 
 <div class="row">
-  <div class="span8 well">
+  <div class="span9 well">
     <div class="pull-right">
       <%= link_to "Back to listing", documents_path %> |
       <%= link_to "Edit", [:edit, @document] %>
@@ -10,7 +10,16 @@
     <div> <%= render_document_topics @document %> </div>
     <%= render_document @document %>
   </div>
-  <div class="span4">
+  <div class="span3">
+    <div class="well">
+      <strong>Tagline:</strong> <%= @document.tagline %><br>
+      <strong>Author:</strong><%= @document.author %><br>
+      <strong>University:</strong><%= @document.university %><br>
+      <strong>Class:</strong> <span class="badge badge-info"><%= @document.class_code %></span> <%= @document.class_name %><br>
+      <strong>Department:</strong> <%= @document.department %><br>
+      <strong>Professor:</strong> <%= @document.professor %><br>
+      <strong>Keywords:</strong> <%= @document.keywords %><br>
+    </div>
     <%= render 'likes', document: @document %>
     <h3>New Comment</h3>
     <%= render 'comments/form' %>

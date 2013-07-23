@@ -2,7 +2,7 @@
   <div class="row-fluid">
     <div class="span6">
       <div class="well">
-        <%= f.input :name, label: "Document title", hint: "Leave blank to use the uploaded file's name", input_html: {class: 'full-width'} %>
+        <%= f.input :title, label: "Document title", hint: "Leave blank to use the uploaded file's name", input_html: {class: 'full-width'} %>
         <% if f.object.file? %>
           <%= render_document f.object, preview: true %>
         <% end %>
@@ -11,8 +11,18 @@
       </div>
     </div>
     <div class="span6">
-      <div class="well">
+      <div class="well form-verical">
         <%= f.association :topics, as: :select, input_html: {multiple: true, class: 'xx-large'} %>
+      </div>
+      <div class="well">
+        <%= f.input :tagline %>
+        <%= f.input :author %>
+        <%= f.input :university %>
+        <%= f.input :class_code %>
+        <%= f.input :class_name %>
+        <%= f.input :department %>
+        <%= f.input :professor %>
+        <%= f.input :keywords %>
       </div>
     </div>
   </div>

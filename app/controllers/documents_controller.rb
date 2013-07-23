@@ -61,7 +61,7 @@ class DocumentsController < ApplicationController
   private
 
   def document_params
-    params.require(:document).permit(:name, :file, topic_ids: [])
+    params.require(:document).permit(:name, :file, :title, :tagline, :author, :university, :class_code, :class_name, :department, :professor, :keywords, topic_ids: [])
   end
 
   def interpolation_options
