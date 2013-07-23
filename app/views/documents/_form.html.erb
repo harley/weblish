@@ -6,6 +6,7 @@
         <% if f.object.file? %>
           <%= render_document f.object, preview: true %>
         <% end %>
+        <%= f.input :tagline %>
         <%= f.input :file, hint: "Select a file to upload", label: 'File' %>
         <%= f.button :submit, nil, class: 'btn-info' %>
       </div>
@@ -15,7 +16,6 @@
         <%= f.association :topics, as: :select, input_html: {multiple: true, class: 'xx-large'} %>
       </div>
       <div class="well">
-        <%= f.input :tagline %>
         <%= f.input :author %>
         <%= f.input :university %>
         <%= f.input :class_code %>

@@ -1,35 +1,7 @@
+<% title "Explore" %>
 <div class="pinning-wrapper">
   <div id='masonry'>
-    <% @documents.each do |document| %>
-      <div class='item'>
-        <caption><%= link_to document, document, class: 'noline' %></caption>
-        <%= link_to document do %>
-          <%= render_document_preview document %>
-        <% end %>
-        <h2 class='lipsum'></h2>
-        <div class="row-fluid">
-          <div class="span6">
-            <div class='comments'>
-              <%= document.comments.size %> comments
-            </div>
-          </div>
-          <div class="span6">
-            <div class='likes'>
-              <%= document.likes.size %> likes
-            </div>
-          </div>
-        </div>
-        <div class='chat'>
-          <div class='chatbox'>
-            <% if document.user %>
-              <%= image_tag gravatar_url(document.user, s: 24) %>
-              <span><%= link_to document.user.display_name, document.user %></span>
-            <% end %>
-            <%= render_document_topics document %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render :partial => 'document_pin', :collection => @documents %>
   </div>
 </div>
 

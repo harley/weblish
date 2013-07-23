@@ -1,0 +1,29 @@
+<div class='item'>
+  <caption><%= link_to document_pin, document_pin, class: 'noline' %></caption>
+  <%= link_to document_pin do %>
+    <%= render_gviewer document_pin, w: 250  %>
+  <% end %>
+  <h2 class='lipsum'></h2>
+  <div class="row-fluid">
+    <div class="span6">
+      <div class='comments'>
+        <%= document_pin.comments.size %> comments
+      </div>
+    </div>
+    <div class="span6">
+      <div class='likes'>
+        <%= document_pin.likes.size %> likes
+      </div>
+    </div>
+  </div>
+  <div class='chat'>
+    <div class='chatbox'>
+      <% if document_pin.user %>
+        <%= image_tag gravatar_url(document_pin.user, s: 24) %>
+        <span><%= link_to document_pin.user.display_name, document_pin.user %></span>
+      <% end %>
+      <%= simple_format document_pin.tagline %>
+      <%= render_document_topics document_pin %>
+    </div>
+  </div>
+</div>

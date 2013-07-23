@@ -41,7 +41,15 @@ module DocumentsHelper
     end
   end
 
-  def render_gviewer(document)
-    raw %{<iframe src="http://docs.google.com/viewer?url=#{CGI.escape document.file.url}&embedded=true" width="100%" height="750" style="border: none;"></iframe>}
+  def render_gviewer(document, options = {})
+    if options[:w]
+      width = options[:w]
+      height = width.to_i * 11.0 / 8.5
+    else
+      width = "100%"
+      height = "750"
+    end
+
+    raw %{<iframe src="http://docs.google.com/viewer?url=#{CGI.escape document.file.url}&embedded=true" width="#{width}" height="#{height}" style="border: none;"></iframe>}
   end
 end

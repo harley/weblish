@@ -1,27 +1,7 @@
-<h1>My Documents</h1>
+<% title "My Documents" %>
 
-<table border="0" class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th>Uploaded by</th>
-      <th>Comments</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @documents.each do |document| %>
-    <tr>
-      <td>
-        <%= link_to document, document %><br>
-        <%= render_document_topics document %>
-      </td>
-      <td><%= render_document document, preview: true %></td>
-      <td><%= document.user %></td>
-      <td>
-        <%= render 'comments/comments', comments: document.comments %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="pinning-wrapper">
+  <div id='masonry'>
+    <%= render :partial => 'document_pin', :collection => @documents %>
+  </div>
+</div>
