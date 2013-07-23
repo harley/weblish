@@ -1,0 +1,12 @@
+Name:	130422_Boeing_Final
+File:	130422_Boeing_Final.docx
+Title:	Boeing
+Author:	Karine Alyankian, Masha Nikolski, Aviad Ohayon, Nikhil Harish Seshan, Hadar Yehudai
+Topics:	Management, Marketing, Strategy
+Keywords:	Boeing, airline, 787 Dreamliner, Michael Porter, CAGE framework
+University:	The Wharton School of the University of Pennsylvania
+ClassCode:	MGMT 611
+ClassName:	Managing the Established Enterprise
+Department:	Management
+Professor:	Matthew Bidwell, Prithwiraj Choudhury, Natalya Vinokurova
+Tagline:	An analysis of Boeing's industy position, human capital and global strategy

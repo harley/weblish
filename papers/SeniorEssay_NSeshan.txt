@@ -1,0 +1,12 @@
+Name:	SeniorEssay_NSeshan
+File:	SeniorEssay_NSeshan.pdf
+Title:	Diversity, Religiosity and Inter-Religious Violence
+Author:	Nikhil Harish Seshan
+Topics:	International Relations, South Asian Studies, Religious Studies, Political Science
+Keywords:	inter-religious violence, Hindu, Muslim, regression, riots
+University:	Yale University
+ClassCode:	INTS 402b
+ClassName:	International Cooperation
+Department:	International Studies
+Professor:	James Vreeland
+Tagline:	The interaction between religiosity and religious diversity is the source of inter-religious violence

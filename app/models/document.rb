@@ -6,7 +6,7 @@ class Document < ActiveRecord::Base
   mount_uploader :file, DocumentUploader
 
   validates :file, presence: true
-  validates :user_id, presence: true
+  # validates :user_id, presence: true
 
   default_scope -> { order('created_at DESC') }
 

@@ -71,4 +71,5 @@ gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'kaminari-bootstrap'
 group :development do
   gem 'letter_opener'
+  gem 'pry'
 end
