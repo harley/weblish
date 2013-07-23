@@ -51,6 +51,7 @@ gem 'unicorn'
 gem 'foreman'
 gem 'devise', '~> 3.0.0.rc'
 gem 'font-awesome-rails'
+gem 'fog'
 gem 'carrierwave'
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'responders'
@@ -73,3 +74,4 @@ group :development do
   gem 'letter_opener'
   gem 'pry'
 end
+gem 'figaro'
