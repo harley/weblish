@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  before_filter :authenticate_user!, except: [:show, :like]
+  before_filter :authenticate_user!, except: [:show, :like, :explore]
 
   respond_to :html
   responders :flash
