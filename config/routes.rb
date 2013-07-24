@@ -15,6 +15,7 @@ Weblish::Application.routes.draw do
     end
     collection do
       get :explore
+      get :search
     end
   end
 

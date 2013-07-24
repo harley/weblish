@@ -75,3 +75,4 @@ group :development do
   gem 'pry'
 end
 gem 'figaro'
+gem 'pg_search'

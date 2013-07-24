@@ -58,6 +58,10 @@ class DocumentsController < ApplicationController
     @documents = Document.order("created_at DESC").page(params[:page]).per(20)
   end
 
+  def search
+    @documents = Document.text_search(params[:query]).page(params[:page]).per(6)
+  end
+
   private
 
   def document_params

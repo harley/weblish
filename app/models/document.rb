@@ -1,7 +1,7 @@
 class Document < ActiveRecord::Base
   belongs_to :user
   has_many :categorizations
-  has_many :topics, through: :categorizations
+  has_many :topics, through: :categorizations#, source: :topic
 
   mount_uploader :file, DocumentUploader
 
@@ -15,6 +15,12 @@ class Document < ActiveRecord::Base
   acts_as_votable
 
   after_save :set_name_if_not_presence
+
+  include PgSearch
+  pg_search_scope :search, against: [:title, :tagline, :author, :class_name, :class_code, :department, :professor, :keywords],
+    using: {tsearch: {dictionary: "english"}},
+    associated_against: {topics: :name},
+    ignoring: :accents
 
   def to_s
     (title || name || file).presence || 'Untitled'
@@ -38,6 +44,14 @@ class Document < ActiveRecord::Base
   def liked_by?(user)
     if user
       likes.exists?(voter_id: user.id, voter_type: user.class.name)
+    end
+  end
+
+  def self.text_search(query)
+    if query.present?
+      search(query)
+    else
+      scoped
     end
   end
 end
