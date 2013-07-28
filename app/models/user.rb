@@ -19,6 +19,11 @@ class User < ActiveRecord::Base
     email
   end
 
+  def peer_papers
+    # SLIME
+    Document.last(5)
+  end
+
   def documents_read_count
     'XXX'
   end
@@ -43,6 +48,7 @@ class User < ActiveRecord::Base
     Document.where(user_id: followed_user_ids)
   end
 
+  private
   def set_interests
     if new_record? and self.topics.empty?
       self.topics = Topic.all

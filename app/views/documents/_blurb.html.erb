@@ -1,0 +1,45 @@
+<div class="well">
+  <div class="row-fluid">
+  <div class="span6">
+    <h4><%= document.title %></h4>
+    <div>
+      <%= link_to document do  %>
+        <div class="label"><%= document.likes_count %> likes
+        </div>
+      <% end %>
+      <%= link_to document do %>
+        <div class="label"><%= document.comments_count %> comments
+        </div>
+      <% end %>
+    </div>
+    <p>
+    <span style="font-weight: normal;">An exploration of everything meta, everything that can and kant be done. This is the second sentence of the subtitle/description.</span>
+    </p>
+    <span class="label pull-right label-success">follow author</span><h4> <span style="font-weight: normal;">
+      <%= document.author %>
+    </span></h4>
+    <h5><%= document.university %></h5>
+  </div>
+  <div class="span6">
+    <p>
+      <span class="badge badge-info">
+        <%= document.class_code %>
+      </span>
+    </p>
+    <% document.topics.each do |topic| %>
+      <p>
+        <span class="label pull-right label-success">follow topic</span>
+        <%= link_to topic.name, coming_soon_path %>
+      </p>
+    <% end %>
+    <p>
+        <span class="label pull-right label-success">follow faculty</span>
+      <%= document.professor %>
+    </p>
+    <p>
+      <%= render '/comments/comment', comment: document.comments.last %>
+    </p>
+    <%= link_to "Join the discussion", document, class: 'btn' %>
+  </div>
+</div>
+</div>

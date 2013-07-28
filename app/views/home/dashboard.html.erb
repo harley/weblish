@@ -20,82 +20,11 @@
 <hr>
 <div class="row-fluid">
   <div class="span4">
-    <div class="pad10px">
-      <span style="color: rgb(0, 0, 0); font-family: 'News Cycle', 'Arial Narrow Bold', sans-serif; font-size: 28px; font-weight: bold; line-height: 1.2;"><%= current_user.display_name %></span>
-      <br>
-      <div class="well margin10px">You have published
-        <b><%= current_user.documents.size %> papers </b> that have been
-        <b>read</b>
-        <b><%= current_user.documents_read_count %> times.<br></b>
-        <br> You have
-        <b>5 peer reviews </b> and
-        <b>12 comments.</b>
-        <br>
-      </div>
-      <div></div>
-      <div></div>
-      <p></p>
-      <span class="label label-important"><span style="font-weight: normal;">You have two new notifications.</span>
-      </span>
-      <div class="media">
-        <a class="pull-left" href="#">
-          <img class="media-object" src="//app.divshot.com/img/placeholder-64x64.gif" width="45">
-        </a>
-        <div class="media-body">
-          <h5 class="media-heading">George Washington reviewed your paper</h5>
-          <p>"A fine work of simian analysis. Clearly..."</p>
-        </div>
-      </div>
-      <div class="media">
-        <a class="pull-left" href="#">
-          <img class="media-object" src="//app.divshot.com/img/placeholder-64x64.gif" width="45">
-        </a>
-        <div class="media-body">
-          <h5 class="media-heading">Justin Bieber commented on your paper</h5>
-          <p>"Sick paper dude! I relate strongly to the..."</p>
-        </div>
-      </div>
+    <div class="well well-large">
+    <%= render 'all_topics' %>
     </div>
   </div>
-  <div class="span4">
-    <div class="pad10px">
-      <h3>From people you follow</h3>
-      <%= render partial: 'documents/teaser', collection: current_user.popular_documents_from_followed.last(3) %>
-    </div>
-  </div>
-  <div class="pad10px span4">
-    <h3>From topics you follow</h3>
-    <div class="media">
-      <a class="pull-left" href="#"></a>
-      <div class="media-body">
-        <div class="well">
-          <div class="media">
-            <a class="pull-left" href="#"></a>
-            <div class="media-body">
-              <h4 class="media-heading">In History</h4>
-              <p>
-              <i>"Veniam sapiente doloremque possimus eveniet iusto, accusantium aliquid doloribus quos deleniti ratione, ullamco illo recusandae molestias laborum veritatis conse"</i>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="well">
-          <div class="media">
-            <a class="pull-left" href="#"></a>
-            <div class="media-body">
-              <h4 class="media-heading">In Political Science</h4>
-              <p>
-              <i>"Veniam sapiente doloremque possimus eveniet iusto, accusantium aliquid doloribus quos deleniti ratione, ullamco illo recusandae molestias laborum veritatis conse"</i>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="media">
-      <a class="pull-left" href="#"></a>
-      <div class="media-body"></div>
-    </div>
+  <div class="span8">
+    <%= render 'users/peer_papers' %>
   </div>
 </div>
-<hr>

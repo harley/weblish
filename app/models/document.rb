@@ -54,4 +54,12 @@ class Document < ActiveRecord::Base
       scoped
     end
   end
+
+  def likes_count
+    likes.size
+  end
+
+  def comments_count
+    comments.size
+  end
 end
