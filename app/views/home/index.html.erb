@@ -3,9 +3,11 @@
     <span style="font-weight: normal;">lish</span>
   </h1>
   <p>Share your work. Brand yourself. Nerd out.</p>
-  <p>
-  <a class="btn btn-success btn-large" href="<%= new_user_registration_path %>">Sign Up</a>
-  </p>
+  <% if current_user %>
+    <%= link_to "Go To Dashboard", dashboard_path, class: 'btn btn-success btn-large' %>
+  <% else %>
+    <a class="btn btn-success btn-large" href="<%= new_user_registration_path %>">Sign Up</a>
+  <% end %>
 </div>
 <div class="row"></div>
 <div class="row">
