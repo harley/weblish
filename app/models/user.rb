@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   has_many :reversed_relationships, foreign_key: "followed_id", class_name: "Relationship"
   has_many :followed_users, through: :relationships, source: :followed
   has_many :followers, through: :reversed_relationships
+  has_many :interests
+  has_many :topics, through: :interests
+
+  after_initialize :set_interests
 
   def to_s
     email
@@ -37,5 +41,11 @@ class User < ActiveRecord::Base
 
   def popular_documents_from_followed
     Document.where(user_id: followed_user_ids)
+  end
+
+  def set_interests
+    if new_record? and self.topics.empty?
+      self.topics = Topic.all
+    end
   end
 end

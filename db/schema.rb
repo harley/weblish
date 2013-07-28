@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724095518) do
+ActiveRecord::Schema.define(version: 20130728072424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,18 @@ ActiveRecord::Schema.define(version: 20130724095518) do
   end
 
   add_index "documents", ["user_id", "created_at"], name: "index_documents_on_user_id_and_created_at", using: :btree
+
+  create_table "interests", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "interests", ["topic_id", "user_id"], name: "index_interests_on_topic_id_and_user_id", using: :btree
+  add_index "interests", ["topic_id"], name: "index_interests_on_topic_id", using: :btree
+  add_index "interests", ["user_id", "topic_id"], name: "index_interests_on_user_id_and_topic_id", using: :btree
+  add_index "interests", ["user_id"], name: "index_interests_on_user_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
