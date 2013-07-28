@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   private
   def store_location(route = nil)
-    route ||= request.fullpath
+    route ||= request.original_url
     session[:user_return_to] = route
   end
 end
