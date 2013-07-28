@@ -7,6 +7,9 @@ Weblish::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   get 'home/pin' => 'home#pin'
+  get 'home/coming_soon' => 'home#coming_soon', as: 'coming_soon'
+  get 'home/personal' => 'home#personal', as: 'personal_homepage'
+  get 'home/dashboard' => 'home#dashboard', as: 'dashboard'
 
   resources :documents do
     resources :comments

@@ -12,29 +12,27 @@
   <div class="span4">
     <div class="well">
       <h3>Share Your Work.</h3>
-      <p>All those hours in the library, all those chats over assorted beverages,
-      all those nights of typing and editing...share them with more than just
-      your TA. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+      <p>
+        <%= link_to "Make your work accessible", new_document_path %> to top undergraduates and academics worldwide.
+        Have them <%= link_to "proof read", coming_soon_path %>, <%= link_to "receive comments", personal_homepage_path %>,
+        and <%= link_to "build a fan following!", followers_user_path(current_user) %>
+    </p>
     </div>
   </div>
   <div class="span4">
     <div class="well">
       <h3>Brand Yourself.</h3>
-      <p>Grad student? Researcher? Quasi-academic? Publish your work and get it
-      peer reviewed for colleagues and potential employers to see. &nbsp; &nbsp;
-      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      &nbsp; &nbsp; &nbsp;&nbsp;</p>
-      <p></p>
+      <p>
+      <%= link_to "Showcase your work", new_document_path %> to classmates, professors, friends and family. <%= link_to "Get cited", coming_soon_path %> by peers and <%= link_to "create a track record of scholarship", documents_path %> accessible to recruiters.
+      </p>
     </div>
   </div>
   <div class="span4">
     <div class="well">
-      <h3>Nerd out.</h3>
-      <p>You love chatting about your robotics research, gabbing about the working
-      class revolution, or debating over what Shakespeare
-      <i>really</i> &nbsp;meant. Find like-minded souls who share your passions.</p>
-      <p></p>
+      <h3>Connect.</h3>
+      <p>
+        <%= link_to "Access your classmates' papers", explore_documents_path %>, have <%= link_to "discussions with like-minded peers", coming_soon_path %>, and <%= link_to "stay abreast of the latest research", coming_soon_path %> published by your professors.
+      </p>
     </div>
   </div>
 </div>
